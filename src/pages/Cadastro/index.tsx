@@ -14,7 +14,7 @@ import ModalUnidade from "../../components/ModalUnidade";
 import useModalUnidade from "../../hooks/useModalUnidade";
 import ModalModelo from "../../components/ModalModelo";
 import useModalModelo from "../../hooks/useModalModelo";
-import { useEffect, useState } from "react";
+import { SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, SetStateAction, useEffect, useState } from "react";
 import axios from "axios";
 import api from "../../utils/api";
 import { ToastContainer, toast } from "react-toastify";
@@ -53,7 +53,7 @@ export default function Cadastro() {
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
 
-  const [titulofabricante, setTituloFabricante] = useState("");
+  const [] = useState("");
   const [cnpj, setCnpj] = useState("");
 
   const [modelo, setMudelo] = useState("");
@@ -61,7 +61,7 @@ export default function Cadastro() {
   const [id_fabricante, setFabricante] = useState("");
   const [id_tipoequipamento, setTipoEquipamento] = useState("");
 
-  const handleSubmitEquipamento = (event) => {
+  const handleSubmitEquipamento = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     axios
@@ -70,11 +70,11 @@ export default function Cadastro() {
         data_compra,
         id_setor,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
+      .then((response: { data: any; }) => console.log(response.data))
+      .catch((error: any) => console.error(error));
   };
 
-  const handleSubmitSetor = (event) => {
+  const handleSubmitSetor = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     axios
@@ -82,11 +82,11 @@ export default function Cadastro() {
         titulo,
         id_unidade,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
+      .then((response: { data: any; }) => console.log(response.data))
+      .catch((error: any) => console.error(error));
   };
 
-  const handleSubmitFuncionario = (event) => {
+  const handleSubmitFuncionario = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     axios
@@ -97,11 +97,11 @@ export default function Cadastro() {
         id_setor,
         id_tipofuncionario,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
+      .then((response: { data: any; }) => console.log(response.data))
+      .catch((error: any) => console.error(error));
   };
 
-  const handleSubmitEndereco = (event) => {
+  const handleSubmitEndereco = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     axios
@@ -113,11 +113,11 @@ export default function Cadastro() {
         cidade,
         estado,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
+      .then((response: { data: any; }) => console.log(response.data))
+      .catch((error: any) => console.error(error));
   };
 
-  const handleSubmitFabricante = (event) => {
+  const handleSubmitFabricante = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     axios
@@ -125,11 +125,11 @@ export default function Cadastro() {
         titulo,
         cnpj,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
+      .then((response: { data: any; }) => console.log(response.data))
+      .catch((error: any) => console.error(error));
   };
 
-  const handleSubmitUnidade = (event) => {
+  const handleSubmitUnidade = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     axios
@@ -137,11 +137,11 @@ export default function Cadastro() {
         nome,
         id_endereco,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
+      .then((response: { data: any; }) => console.log(response.data))
+      .catch((error: any) => console.error(error));
   };
 
-  const handleSubmitModelo = (event) => {
+  const handleSubmitModelo = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     axios
@@ -151,8 +151,8 @@ export default function Cadastro() {
         id_fabricante,
         id_tipoequipamento,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
+      .then((response: { data: any; }) => console.log(response.data))
+      .catch((error: any) => console.error(error));
   };
 
   const [modelos, setModelos] = useState<any[]>([]);
@@ -252,7 +252,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectModelo"
-              onChange={(event) => setModelo(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setModelo(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
@@ -271,7 +271,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="date"
               value={data_compra}
-              onChange={(event) => setData(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setData(event.target.value)}
             />
 
             <label>Setor</label>
@@ -279,7 +279,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectsetor"
-              onChange={(event) => setSetor(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setSetor(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
@@ -321,7 +321,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={titulo}
-              onChange={(event) => setTitulo(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setTitulo(event.target.value)}
             />
 
             <label>Unidade</label>
@@ -329,7 +329,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectsetor"
-              onChange={(event) => setUnidade(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setUnidade(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
@@ -374,7 +374,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={nome}
-              onChange={(event) => setNome(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setNome(event.target.value)}
             />
 
             <label>Email</label>
@@ -382,7 +382,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="email"
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setEmail(event.target.value)}
             />
 
             <label>Senha</label>
@@ -390,7 +390,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="password"
               value={senha}
-              onChange={(event) => setSenha(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setSenha(event.target.value)}
             />
 
             <label>Setor</label>
@@ -398,7 +398,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectsetor"
-              onChange={(event) => setSetor(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setSetor(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
@@ -417,7 +417,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectsetor"
-              onChange={(event) => setTipoFuncionario(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setTipoFuncionario(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
@@ -462,7 +462,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={cep}
-              onChange={(event) => setCep(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setCep(event.target.value)}
             />
 
             <label>Logradouro</label>
@@ -470,7 +470,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={logradouro}
-              onChange={(event) => setLogradouro(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setLogradouro(event.target.value)}
             />
 
             <label>Numero</label>
@@ -478,7 +478,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={numero}
-              onChange={(event) => setNumero(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setNumero(event.target.value)}
             />
 
             <label>Bairro</label>
@@ -486,7 +486,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={bairro}
-              onChange={(event) => setBairro(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setBairro(event.target.value)}
             />
 
             <label>Cidade</label>
@@ -494,7 +494,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={cidade}
-              onChange={(event) => setCidade(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setCidade(event.target.value)}
             />
 
             <label>Estado</label>
@@ -502,7 +502,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={estado}
-              onChange={(event) => setEstado(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setEstado(event.target.value)}
             />
 
             <button onClick={notify} id="submitEquipamento" type="submit">
@@ -536,7 +536,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={titulo}
-              onChange={(event) => setTitulo(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setTitulo(event.target.value)}
             />
 
             <label>Cnpj</label>
@@ -544,7 +544,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={cnpj}
-              onChange={(event) => setCnpj(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setCnpj(event.target.value)}
             />
 
             <button onClick={notify} id="submitEquipamento" type="submit">
@@ -575,7 +575,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={nome}
-              onChange={(event) => setNome(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setNome(event.target.value)}
             />
 
             <label>Endereço</label>
@@ -583,7 +583,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectsetor"
-              onChange={(event) => setEndereco(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setEndereco(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
@@ -625,7 +625,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="string"
               value={modelo}
-              onChange={(event) => setMudelo(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setMudelo(event.target.value)}
             />
 
             <label>Consumo Nominal</label>
@@ -633,7 +633,7 @@ export default function Cadastro() {
               className="inputEquipamento"
               type="decimal"
               value={consumo_nominal}
-              onChange={(event) => setConsumoNominal(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setConsumoNominal(event.target.value)}
             />
 
             <label>Fabricante</label>
@@ -641,7 +641,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectsetor"
-              onChange={(event) => setFabricante(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setFabricante(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
@@ -660,7 +660,7 @@ export default function Cadastro() {
               className="selectEquipamento"
               name=""
               id="selectsetor"
-              onChange={(event) => setTipoEquipamento(event.target.value)}
+              onChange={(event: { target: { value: SetStateAction<string>; }; }) => setTipoEquipamento(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
