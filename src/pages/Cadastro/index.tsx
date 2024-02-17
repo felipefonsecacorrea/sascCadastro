@@ -65,7 +65,7 @@ export default function Cadastro() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/equipamento", {
+      .post("https://apisasc.azurewebsites.net/equipamento", {
         id_modelo,
         data_compra,
         id_setor,
@@ -78,7 +78,7 @@ export default function Cadastro() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/setor", {
+      .post("https://apisasc.azurewebsites.net/setor", {
         titulo,
         id_unidade,
       })
@@ -90,7 +90,7 @@ export default function Cadastro() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/funcionario", {
+      .post("https://apisasc.azurewebsites.net/funcionario", {
         nome,
         email,
         senha,
@@ -105,7 +105,7 @@ export default function Cadastro() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/endereco", {
+      .post("https://apisasc.azurewebsites.net/endereco", {
         cep,
         logradouro,
         numero,
@@ -121,7 +121,7 @@ export default function Cadastro() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/fabricante", {
+      .post("https://apisasc.azurewebsites.net/fabricante", {
         titulo,
         cnpj,
       })
@@ -133,7 +133,7 @@ export default function Cadastro() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/unidade", {
+      .post("https://apisasc.azurewebsites.net/unidade", {
         nome,
         id_endereco,
       })
@@ -145,7 +145,7 @@ export default function Cadastro() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/modelo", {
+      .post("https://apisasc.azurewebsites.net/modelo", {
         modelo,
         consumo_nominal,
         id_fabricante,
