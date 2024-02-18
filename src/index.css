@@ -38,3 +38,28 @@
 body {
   background-color: #fff;
 }
+
+@media screen and (max-width: 684px) {
+  #divformEquipamento {
+      flex-direction: column;
+  }
+
+  #divformEquipamento input{
+    width: 85%;
+  }
+    
+  #divformEquipamento select{
+    width: 85%;
+}
+
+#divformEquipamento label{
+  font-size: 200%;
+}
+
+#divformEquipamento button{
+  font-size: 150%;
+}
+
+}
+
+  
